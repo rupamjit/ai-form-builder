@@ -1,4 +1,5 @@
-import React from "react";
+"use client"
+import React, { useState } from "react";
 import GenerateFormInput from "./GenerateFormInput";
 import { Button } from "./ui/button";
 
@@ -23,6 +24,9 @@ const suggestionBtnText: SuggestionText[] = [
 ];
 
 const HeroSection = () => {
+
+const [text,setText] = useState<string>("")
+
   return (
     <section>
       <div className="relative">
@@ -38,10 +42,10 @@ const HeroSection = () => {
           </p>
         </div>
       </div>
-      <GenerateFormInput />
+      <GenerateFormInput text={text}/>
       <div className="grid grid-cols-3 gap-3">
         {suggestionBtnText.map((item: SuggestionText, index: number) => (
-          <Button className="rounded-full h-10 " variant="outline" key={index}>
+          <Button onClick={()=>setText(item.text)} className="rounded-full h-10 " variant="outline" key={index}>
             {item.label}
           </Button>
         ))}

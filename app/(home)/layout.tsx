@@ -5,7 +5,7 @@ import { UserButton } from "@clerk/nextjs";
 
 const layout = ({ children }: { children: React.ReactNode }) => {
   return (
-     <div>
+    <div>
       <div className="border-b fixed w-full bg-white z-50">
         <nav className="flex items-center justify-between max-w-7xl mx-auto py-2">
           <Logo />
@@ -15,9 +15,7 @@ const layout = ({ children }: { children: React.ReactNode }) => {
           </div>
         </nav>
       </div>
-      <div className="pt-16">
-        {children}
-      </div>
+      <div className="pt-16">{children}</div>
     </div>
   );
 };
