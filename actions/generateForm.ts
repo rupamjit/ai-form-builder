@@ -35,19 +35,21 @@ export const generateForm = async (prevState: unknown, formData: FormData) => {
       };
     }
 
-    const prompt = `Generate a JSON response for a form with the following structure:
-{
-  "formTitle": "string",
-  "formFields": [
-    {
-      "label": "string",
-      "name": "string",
-      "placeholder": "string"
-    }
-  ]
-}
-Description: ${descriptionRaw} and only give as an object and don't write anything
-`;
+//     const prompt = `Generate a JSON response for a form with the following structure:
+// {
+//   "formTitle": "string",
+//   "formFields": [
+//     {
+//       "label": "string",
+//       "name": "string",
+//       "placeholder": "string"
+//     }
+//   ]
+// }
+// Description: ${descriptionRaw} and only give as an object and don't write anything
+// `;
+
+const prompt = `Create  json form with the following fields : title, fields(If any field include options the n keep it inside an array  not object), button in this topic ${descriptionRaw} and dont give any extra thing only give the json data`
 
     // Gemini AI setup
     const apiKey = process.env.GEMINI_API_KEY;
